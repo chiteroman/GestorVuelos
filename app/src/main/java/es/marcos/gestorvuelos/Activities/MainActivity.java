@@ -11,13 +11,15 @@ import es.marcos.gestorvuelos.R;
 
 public class MainActivity extends AppCompatActivity {
 
+    static {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
 
         Button iniciar = findViewById(R.id.iniciar);
         Button salir = findViewById(R.id.salir);

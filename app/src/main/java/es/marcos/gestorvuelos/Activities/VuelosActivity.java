@@ -3,6 +3,7 @@ package es.marcos.gestorvuelos.Activities;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,12 +21,16 @@ public class VuelosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vuelos);
 
+        TextView textView = findViewById(R.id.nombre_aeropuerto);
+
         Aeropuerto aeropuerto;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             aeropuerto = getIntent().getExtras().getSerializable("aeropuerto", Aeropuerto.class);
         } else {
             aeropuerto = (Aeropuerto) getIntent().getExtras().getSerializable("aeropuerto");
         }
+
+        textView.setText(aeropuerto.getNombre());
 
         ListView lista = findViewById(R.id.listaVuelos);
 

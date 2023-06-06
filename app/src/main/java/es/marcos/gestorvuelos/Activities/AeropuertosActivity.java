@@ -25,7 +25,7 @@ public class AeropuertosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_aeropuertos);
 
         try {
-            Response<List<Aeropuerto>> response = Client.getApi().getAeropuertos().execute();
+            Response<List<Aeropuerto>> response = Client.api.getAeropuertos().execute();
             LinkedList<Aeropuerto> aeropuertos = response.body() != null ? new LinkedList<>(response.body()) : null;
 
             if (aeropuertos == null) {
@@ -55,7 +55,6 @@ public class AeropuertosActivity extends AppCompatActivity {
                 intent.putExtra("aeropuerto", aeropuerto);
                 startActivity(intent);
             });
-
 
         } catch (IOException e) {
             e.printStackTrace();

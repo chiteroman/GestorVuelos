@@ -2,65 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hora salida:" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/hora_salida"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[HORA_SALIDA]" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hora llegada:" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/hora_llegada"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="[HORA_LLEGADA]" />
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="[NOMBRE AVION]" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="Pasajeros:" />
-
-        <Space
-            android:layout_width="10dp"
-            android:layout_height="wrap_content" />
+            android:gravity="left"
+            android:text="Destino: []" />
 
         <TextView
-            android:id="@+id/pasajeros"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="[PASAJEROS]" />
+            android:gravity="left"
+            android:text="Hora de salida: []" />
+
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Hora de llegada: []" />
 
     </LinearLayout>
+
 </LinearLayout>
