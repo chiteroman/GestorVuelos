@@ -1,15 +1,24 @@
 package es.marcos.gestorvuelos.Models;
 
-import java.io.Serializable;
-import java.time.ZonedDateTime;
+import com.google.gson.annotations.SerializedName;
 
-public class Vuelo implements Serializable {
+import java.util.List;
+
+public class Vuelo {
+    @SerializedName("id")
     private long id;
-    private Aeropuerto aeropuertoOrigen;
+    @SerializedName("avion")
+    private Avion avion;
+    @SerializedName("aeropuertoSalida")
+    private Aeropuerto aeropuertoSalida;
+    @SerializedName("aeropuertoDestino")
     private Aeropuerto aeropuertoDestino;
-    private ZonedDateTime horaSalidaOrigen;
-    private ZonedDateTime horaLlegadaDestino;
-    private int pasajeros;
+    @SerializedName("horaSalidaOrigen")
+    private String horaSalidaOrigen;
+    @SerializedName("horaLlegadaDestino")
+    private String horaLlegadaDestino;
+    @SerializedName("usuarios")
+    private List<Usuario> usuarios;
 
     public long getId() {
         return id;
@@ -19,12 +28,20 @@ public class Vuelo implements Serializable {
         this.id = id;
     }
 
-    public Aeropuerto getAeropuertoOrigen() {
-        return aeropuertoOrigen;
+    public Avion getAvion() {
+        return avion;
     }
 
-    public void setAeropuertoOrigen(Aeropuerto aeropuertoOrigen) {
-        this.aeropuertoOrigen = aeropuertoOrigen;
+    public void setAvion(Avion avion) {
+        this.avion = avion;
+    }
+
+    public Aeropuerto getAeropuertoSalida() {
+        return aeropuertoSalida;
+    }
+
+    public void setAeropuertoSalida(Aeropuerto aeropuertoSalida) {
+        this.aeropuertoSalida = aeropuertoSalida;
     }
 
     public Aeropuerto getAeropuertoDestino() {
@@ -35,27 +52,27 @@ public class Vuelo implements Serializable {
         this.aeropuertoDestino = aeropuertoDestino;
     }
 
-    public ZonedDateTime getHoraSalidaOrigen() {
+    public String getHoraSalidaOrigen() {
         return horaSalidaOrigen;
     }
 
-    public void setHoraSalidaOrigen(ZonedDateTime horaSalidaOrigen) {
+    public void setHoraSalidaOrigen(String horaSalidaOrigen) {
         this.horaSalidaOrigen = horaSalidaOrigen;
     }
 
-    public ZonedDateTime getHoraLlegadaDestino() {
+    public String getHoraLlegadaDestino() {
         return horaLlegadaDestino;
     }
 
-    public void setHoraLlegadaDestino(ZonedDateTime horaLlegadaDestino) {
+    public void setHoraLlegadaDestino(String horaLlegadaDestino) {
         this.horaLlegadaDestino = horaLlegadaDestino;
     }
 
-    public int getPasajeros() {
-        return pasajeros;
+    public List<Usuario> getUsuarios() {
+        return usuarios;
     }
 
-    public void setPasajeros(int pasajeros) {
-        this.pasajeros = pasajeros;
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 }

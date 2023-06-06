@@ -2,6 +2,7 @@ package es.marcos.gestorvuelos.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -23,6 +24,9 @@ public class AeropuertosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aeropuertos);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         try {
             Response<List<Aeropuerto>> response = Client.api.getAeropuertos().execute();
@@ -52,7 +56,8 @@ public class AeropuertosActivity extends AppCompatActivity {
             lista.setOnItemClickListener((parent, view, position, id) -> {
                 Aeropuerto aeropuerto = aeropuertos.get(position);
                 Intent intent = new Intent(this, VuelosActivity.class);
-                intent.putExtra("aeropuerto", aeropuerto);
+                intent.putExtra("id_aeropuerto", aeropuerto.getId());
+                intent.putExtra("nombre_aeropuerto", aeropuerto.getNombre());
                 startActivity(intent);
             });
 

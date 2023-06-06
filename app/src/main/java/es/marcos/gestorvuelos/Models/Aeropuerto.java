@@ -2,18 +2,24 @@ package es.marcos.gestorvuelos.Models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class Aeropuerto implements Serializable {
+public class Aeropuerto {
     @SerializedName("id")
     private long id;
     @SerializedName("nombre")
     private String nombre;
     @SerializedName("url")
     private String url;
-    @SerializedName("vuelos")
-    private List<Vuelo> vuelos;
+    @SerializedName("vuelosSalidas")
+    private List<Vuelo> vuelosSalidas;
+    @SerializedName("vuelosLlegadas")
+    private List<Vuelo> vuelosLlegadas;
+
+    public Aeropuerto(String nombre, String url) {
+        this.nombre = nombre;
+        this.url = url;
+    }
 
     public long getId() {
         return id;
@@ -39,11 +45,19 @@ public class Aeropuerto implements Serializable {
         this.url = url;
     }
 
-    public List<Vuelo> getVuelos() {
-        return vuelos;
+    public List<Vuelo> getVuelosSalidas() {
+        return vuelosSalidas;
     }
 
-    public void setVuelos(List<Vuelo> vuelos) {
-        this.vuelos = vuelos;
+    public void setVuelosSalidas(List<Vuelo> vuelosSalidas) {
+        this.vuelosSalidas = vuelosSalidas;
+    }
+
+    public List<Vuelo> getVuelosLlegadas() {
+        return vuelosLlegadas;
+    }
+
+    public void setVuelosLlegadas(List<Vuelo> vuelosLlegadas) {
+        this.vuelosLlegadas = vuelosLlegadas;
     }
 }

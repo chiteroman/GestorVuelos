@@ -11,21 +11,25 @@ import es.marcos.gestorvuelos.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    static {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         Button iniciar = findViewById(R.id.iniciar);
+        Button reservas = findViewById(R.id.reservas);
         Button salir = findViewById(R.id.salir);
 
         iniciar.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AeropuertosActivity.class);
+            startActivity(intent);
+        });
+
+        reservas.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, Reservas.class);
             startActivity(intent);
         });
 
